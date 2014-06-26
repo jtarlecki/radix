@@ -5,7 +5,7 @@ class Radix(object):
     '''
     def __init__(self):
         '''
-        Since class is shared by reciprical operations, not much 
+        Since class is shared by reciprocal operations, not much 
         to initialize. The methods are more important here.
         '''
         self.coeffs = []
