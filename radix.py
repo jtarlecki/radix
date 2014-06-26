@@ -7,12 +7,10 @@ class Radix(object):
         pass
     
     def string_to_number(self, string, base):
-        
         self.string = string
         self.base = base
         #print 'converting string "%s" to number of base = %d' % (string, base)
 
-        s = []
         self.number = 0
         n = len(self.string)
         self.coeffs = []
@@ -50,7 +48,6 @@ class Radix(object):
             self.coeffs.append(str(c))
         
         self.string = ('').join(self.coeffs)
-        
         return self.string
     
     def equation(self):
@@ -97,21 +94,21 @@ def test():
     print 'times to test:\n', times    
     
     for time in times:
-        
+
         for base in bases:
             
             test1 = Radix()
             string = test1.number_to_string(time, base)
             
             test2 = Radix()
-            number = test2.string_to_number(string, base)
-            
-            iterations+=1 
+            number = test2.string_to_number(string, base) 
             
             if number != time or test1.equation() != test2.equation():
                 errors+=1
                 print 'time= %d; base= %d; string= %s, test1.eq = %s; test2.eq = %s' % (time, base, string, test1.equation(), test2.equation())
-          
+                
+            iterations+=1
+
     print '%d errors out of %d iterations.' % (errors, iterations)
     print 'test complete'
     
