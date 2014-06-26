@@ -43,7 +43,7 @@ class Radix(object):
         
         for n in self.exps:
             # use python integer division trick to get
-            # argest coeff as an int, no remainder
+            # largest coeff as an int, no remainder
             c = r/self.base**n 
             r -= c*self.base**n
             self.coeffs.append(str(c))
@@ -78,8 +78,8 @@ def sample():
 
 def test():
 
-    bases = []          # numeric bases that produce integers (which are strings) as results
-    times = []          # 0 to 59 seconds, or minutes
+    bases = []          # numeric bases, 2 to 10
+    times = []          # 0 to 59 seconds (or minutes)
     
     iterations = 0
     errors = 0
