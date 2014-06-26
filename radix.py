@@ -1,6 +1,6 @@
 class Radix(object):
     '''
-    for now this class only caclulate for bases between 2 to 10
+    for now this class only caclulates for bases between 2 to 10
     in the future, it will go to 16.
     '''
     def __init__(self):
