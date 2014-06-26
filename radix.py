@@ -4,17 +4,20 @@ class Radix(object):
     in the future, it will go to 16.
     '''
     def __init__(self):
-        pass
+        '''
+        Since class is shared by reciprical operations, not much 
+        to initialize. The methods are more important here.
+        '''
+        self.coeffs = []
+        self.exps = []
     
     def string_to_number(self, string, base):
         self.string = string
         self.base = base
-        #print 'converting string "%s" to number of base = %d' % (string, base)
+        # print 'converting string "%s" to number of base = %d' % (string, base)
 
         self.number = 0
         n = len(self.string)
-        self.coeffs = []
-        self.exps = []
         
         for digit in self.string:
             n-=1
@@ -27,11 +30,9 @@ class Radix(object):
     def number_to_string(self, number, base):
         self.number = number
         self.base = base        
-        #print 'converting number %d to string of base = %d' % (number, base)
+        # print 'converting number %d to string of base = %d' % (number, base)
         
         n = 0
-        self.coeffs = []
-        self.exps = []
         r = self.number
         
         while self.base**n <= self.number:
